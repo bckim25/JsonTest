@@ -738,10 +738,22 @@ class ViewController: UIViewController {
             print("에러 : \(json[10000].error!)") // "Array[999] is out of bounds"
         }
         
-        temp = json.stringValue
+//        temp = json.stringValue
 
-        print("json값 ? \(json) \n\r \n\r  temp ? \(temp)")
-        print("type ? \(type(of: json))")
+//        print("json값 ? \(json) \n\r \n\r  temp ? \(temp)")
+//        print("type ? \(type(of: json))")
+        if let strJson = json.rawString() {
+//            print("제이슨 ? \(strJson)")
+            print("strJson 값은? \(strJson)")
+            print("strJson 타입은 ? \(type(of: strJson))")
+
+            print("json 타입은 ? \(type(of: json))")
+            var transStr = JSON()
+            transStr = JSON(transStr)
+            print("변환은 ? \(transStr)")
+            print("값은 ? \(transStr)")
+        }
+        
         
     }
 
