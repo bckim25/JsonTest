@@ -748,10 +748,16 @@ class ViewController: UIViewController {
             print("strJson 타입은 ? \(type(of: strJson))")
 
             print("json 타입은 ? \(type(of: json))")
-            var transStr = JSON()
-            transStr = JSON(transStr)
-            print("변환은 ? \(transStr)")
-            print("값은 ? \(transStr)")
+//            var transStr = JSON()
+//            transStr = JSON(transStr)
+//            print("변환은 ? \(transStr)")
+//            print("값은 ? \(transStr)")
+            
+            let dataToConvert = strJson.data(using: .utf8)
+
+            let json = try? JSON(data: dataToConvert!)
+
+            print("\nYour string: " + String(describing: json))
         }
         
         
